@@ -1,0 +1,37 @@
+.Home {
+  padding: 2rem;
+}
+.blog-cards {
+  padding: 1rem;
+}
+.blog-card {
+}
+.BlogDiv {
+  margin-bottom: 5rem;
+  height: 500px;
+}
+.blog-content {
+  height: auto;
+}
+.blog-title-div {
+  height: 100px;
+  color: #c79288;
+}
+.read-more {
+  text-decoration: underline;
+  color: #c79288;
+}
+@media screen and (max-width: 767px) {
+  .blog-cards {
+    justify-content: center;
+  }
+  .blog-title {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .Home {
+    padding: 0;
+    padding-top: 2rem;
+  }
+}

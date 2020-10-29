@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import Header from '../components/Header'
 import BlogDiv from '../components/BlogDiv'
 import {fetchBlogs} from '../data/dataHelper'
+import '../css/Home.css'
 //import Blog from "./Blog";
 
 export default class Home extends Component {
@@ -24,11 +26,13 @@ export default class Home extends Component {
     render() {
       return (
         <div className="Home">
+        <Header/>
+        <div style={{marginBottom:'100px'}}>
         {this.state.blogs?(
             <div className='row blog-cards'>
             {this.state.blogs.length !== 0 ? 
                 this.state.blogs.map((blog)=>(
-                        <div className='blog-card row-item col-10 col-md-5 col-lg-5 col-xl-5' 
+                        <div className='blog-card row-item col-10 col-md-6 col-lg-4 col-xl-4' 
                         key={blog.id}>
                         <BlogDiv 
                         id={blog.id}
@@ -40,6 +44,7 @@ export default class Home extends Component {
                 )):null}
             </div>
         ):(null)}
+        </div>
         </div>
       );
     }

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import Header from '../components/Header'
 import Comment from '../components/Comment'
 import CommentForm from '../components/CommentForm'
 import {fetchBlogById, setComment} from '../data/dataHelper'
+import '../css/Blog.css'
 
 export default class Blog extends Component {
     constructor(props){
@@ -35,18 +37,22 @@ export default class Blog extends Component {
         
       return (
         <div className="Blog">
-        <div>
-        <button onClick={()=>this.props.history.goBack()}>Back</button>
+        <Header/>
+        <div className='blog-div' style={{marginBottom:'200px'}}>
+        <div className='back-btn-div'>
+        <button className='button back-btn' onClick={()=>this.props.history.goBack()}>Back</button>
         </div>
-        <h1>{this.state.blog.title}</h1>
-        <h4>{this.state.blog.post_date}</h4>
-        <p>{this.state.blog.content}</p>
-        <h2>Say some thing</h2>
+        <div className='blog-text-div'>
+        <h1 className='blog-text-title'>{this.state.blog.title}</h1>
+        <h4 className='blog-text-date'>{this.state.blog.post_date}</h4>
+        <p className='blog-text-content'>{this.state.blog.content}</p>
+        </div>
+        <h2 className='comment-form-title'>Say some thing</h2>
         <CommentForm 
         blogId={this.state.blog.id}
         callbackFunction ={this.pushComment}
         />
-        <h2>Comments</h2>
+        <h3 className='comments-title'>Comments</h3>
         {this.state.comments.length !==0?(
             this.state.comments.map((comment)=>(
                 <div className='comment-box' key={comment.comment_id}>
@@ -55,9 +61,10 @@ export default class Blog extends Component {
             ))
         ):(
             <div>
-            <h4>No comment. Be the first commenter!</h4>
+            <h5>No comment. Be the first commenter!</h5>
             </div>
         )}
+        </div>
         </div>
       );
     }

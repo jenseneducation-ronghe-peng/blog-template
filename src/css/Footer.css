@@ -1,0 +1,31 @@
+footer {
+  border-top: 1px solid #c79288;
+  padding-top: 2rem;
+}
+.mail {
+  height: 50px;
+  width: 50px;
+  background-image: url(../img/mail.svg);
+  margin: 1rem;
+}
+.tel {
+  height: 50px;
+  width: 50px;
+  background-image: url(../img/phone.svg);
+  margin: 1rem;
+}
+.contacts {
+  justify-content: center;
+  align-items: center;
+}
+.contact-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 550px) {
+  footer {
+    display: none;
+  }
+}

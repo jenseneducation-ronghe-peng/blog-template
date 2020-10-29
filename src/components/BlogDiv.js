@@ -7,10 +7,14 @@ export default class BlogDiv extends Component {
         const {id, title, sub_title, post_date} = this.props
       return (
         <div className="BlogDiv" id={id}>
-        <h5>{post_date}</h5>
-        <h2>{title}</h2>
-        <h6>{sub_title}</h6>
-        <Link to={`blog/${id}`}><button>Read more</button></Link>
+        <div className='blog-content'>
+        <p>{post_date}</p>
+        <div className='blog-title-div'>
+        <h2 className='blog-title'>{title}</h2>
+        </div>
+        <p>{sub_title}</p>
+        </div>
+        <Link to={`blog/${id}`}><h5 className='read-more'>Read more</h5></Link>
         </div>
       );
     }

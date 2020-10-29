@@ -73,6 +73,7 @@ function checkLoginStatus(){
     }
 }
 
+// remove user data
 function removeUser(){
     const LS_KEY = 'blog_user'
     let fromLs = localStorage.getItem(LS_KEY)

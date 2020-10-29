@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {setUser} from '../data/dataHelper'
+import '../css/Login.css'
 
 export default class Login extends Component{
     constructor(props){
@@ -26,26 +27,27 @@ export default class Login extends Component{
             this.setState({error:false})
             setUser(userName)
             this.props.history.push('/')
-            window.location.reload()
         }else{
             this.setState({error:true})
         }
     }
     render(){
         return(
-            <div className='Login'>
-            <label>User Name</label>
-            <hr/>
-            <input value={this.state.userName} onChange={(e) => this.changeUser(e.target.value)}></input>
-            <hr/>
-            <label>Password</label>
-            <hr/>
-            <input type='password' value={this.state.password} onChange={(e) => this.changePass(e.target.value)}></input>
-            <hr/>
+            <div className='Login row'>
+            <label className='login-lable'>User Name</label>
+            <input className='login-input' value={this.state.userName} onChange={(e) => this.changeUser(e.target.value)}></input>
+            
+            <label className='login-lable'>Password</label>
+            
+            <input className='login-input' type='password' value={this.state.password} onChange={(e) => this.changePass(e.target.value)}></input>
+            
             {this.state.error?(
                 <p>{this.state.errorMgs}</p>
             ):null}
-            <button onClick={this.handelLogin}>Log in</button>
+            <div className='login-btn-div'>
+            <button className='button' onClick={this.handelLogin}>Log in</button>
+            <button className='button' onClick={()=>this.props.history.goBack()}>Maybe next time</button>
+            </div>
             </div>
         )
     }

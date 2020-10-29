@@ -1,0 +1,35 @@
+.NewBlog {
+  padding: 2rem;
+}
+.blog-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.newblog-lable {
+  color: #c79288;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+.newblog-input {
+  width: 80%;
+  border: 1px solid #c79288;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+.newblog-title {
+  width: 300px;
+  height: 50px;
+}
+@media screen and (max-width: 550px) {
+  .newblog-title {
+    width: 250px;
+  }
+  .NewBlog {
+    padding: 0;
+    padding-top: 2rem;
+  }
+}

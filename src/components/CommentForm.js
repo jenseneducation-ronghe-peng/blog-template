@@ -39,9 +39,9 @@ export default class CommentForm extends Component{
         return(
             <div className='CommentForm'>
             {this.state.error?(<p>{this.state.errorMsg}</p>):null}
-          <input value={this.state.text} onChange={(e) => this.changeComment(e.target.value)}></input>
-          <hr/>
-          <button onClick={this.handleComment}>Post</button>
+          <textarea className='comment-input' value={this.state.text} onChange={(e) => this.changeComment(e.target.value)} rows={3}></textarea>
+          
+          <button className='button' onClick={this.handleComment}>Comment</button>
             </div>
         )
     }
