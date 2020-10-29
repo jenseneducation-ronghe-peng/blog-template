@@ -12,11 +12,13 @@ export default class CommentForm extends Component{
         }
         this.handleComment=this.handleComment.bind(this)
     }
+    //save comment in this.state
     changeComment(text) {
         this.setState({
             text:text
         })
     }
+    // send comment to parent component (Blog.js)
     async handleComment(){
         let text = this.state.text
         if(text === "" || text=== null){
@@ -29,7 +31,6 @@ export default class CommentForm extends Component{
                 comment_id:`${blogId}-${time}`,
                 text:text
             }
-            //await setComment(blogId,comment)
             this.setState({text:''})
             this.props.callbackFunction(blogId,comment)
             

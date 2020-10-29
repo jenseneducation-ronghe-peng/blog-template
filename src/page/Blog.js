@@ -15,6 +15,7 @@ export default class Blog extends Component {
         this.getBlogById= this.getBlogById.bind(this)
         this.pushComment= this.pushComment.bind(this)
     }
+    // get specific blog content from localStorage
     async getBlogById(){
         const {match:{params}} = this.props
         let id = Number(params.id)
@@ -25,6 +26,7 @@ export default class Blog extends Component {
             comments:comments
         })
     }
+    // add comment to localStorage
     async pushComment(blogId, comment){
         await setComment(blogId, comment)
         this.getBlogById()

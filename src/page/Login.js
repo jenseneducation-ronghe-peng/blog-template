@@ -13,12 +13,15 @@ export default class Login extends Component{
         }
         this.handelLogin=this.handelLogin.bind(this)
     }
+    // save user name in this.state
     changeUser(user){
         this.setState({userName:user})
     }
+    // save user password in this.state
     changePass(pass){
         this.setState({password:pass})
     }
+    // log in and go back to home page
    async handelLogin(){
         console.log('handle login')
         const userName='admin123'

@@ -12,13 +12,14 @@ export default class Header extends Component {
         this.handelLogout=this.handelLogout.bind(this)
     }
 
-
+// check if user is loged in
   async checkLogin(){
     let res = await checkLoginStatus()
     this.setState({
       logInStatus: res
     })
   }
+  // log out and remove user data from localStorage
     handelLogout(){
         removeUser()
         window.location.replace('/')

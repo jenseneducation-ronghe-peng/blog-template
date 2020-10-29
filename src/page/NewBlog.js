@@ -16,15 +16,19 @@ export default class NewBlog extends Component{
         }
         this.handleSubmit=this.handleSubmit.bind(this)
     }
+    //save title to this.state
     changeTitle(input){
         this.setState({title:input})
     }
+    //save sub-title to this.state
     changeSubTitle(input){
         this.setState({subTitle:input})
     }
+    //save text to this.state
     changeText(input){
         this.setState({text:input})
     }
+    //push new blog to localStorage
     async handleSubmit (e){
         e.preventDefault()
         let today = moment().format('YY-MM-DD')

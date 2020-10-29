@@ -3,7 +3,6 @@ import Header from '../components/Header'
 import BlogDiv from '../components/BlogDiv'
 import {fetchBlogs} from '../data/dataHelper'
 import '../css/Home.css'
-//import Blog from "./Blog";
 
 export default class Home extends Component {
     constructor(props){
@@ -12,6 +11,7 @@ export default class Home extends Component {
             blogs:[]
         }
     }
+    //get all blogs from localStorage or from JSON
     async getBlogs(){
         const data = await fetchBlogs()
         let reversedData=data.reverse()
