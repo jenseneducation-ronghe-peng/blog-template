@@ -25,7 +25,7 @@ export default class Nav extends Component{
           ):(
               <div className='nav row'>
               <Link to={'/'}><div className='logo'></div></Link>
-          <h1 className='header-title'>BLOG TEMPLATE</h1>
+          <h2 className='header-title'>BLOG TEMPLATE</h2>
               <Link to={'/login'} style={{textDecoration:'none'}}>
               <div className='admin'></div>
               <h6 style={{color:'#c79288'}}>Log In</h6>
