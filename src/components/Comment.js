@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+/* eslint-disable react/prop-types */
+import React, { Component } from 'react'
 
-export default class Comment extends Component{
-    render(){
-        const{text}= this.props
-        return(
+export default class Comment extends Component {
+  render () {
+    const { text } = this.props
+    return (
             <div className='Comment'>
-            <p>{text}</p>
+              <p>{text}</p>
             </div>
-        )
-    }
+    )
+  }
 }
